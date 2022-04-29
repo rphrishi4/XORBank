@@ -1,0 +1,9 @@
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\CommonLayer.dll
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\CommonLayer.deps.json
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\CommonLayer.pdb
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\AutoMapper.dll
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\Microsoft.Extensions.Options.dll
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\Microsoft.Extensions.Primitives.dll
+C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\CommonLayer\bin\Debug\net5.0\publish\System.Runtime.CompilerServices.Unsafe.dll

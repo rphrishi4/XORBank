@@ -1,0 +1,95 @@
+﻿@model IEnumerable<BankSystem.Models.TransactionViewModel>
+
+@{
+    ViewData["Title"] = "MiniStatement";
+}
+
+
+<div class=" row ml-2">
+    <h5>Bank Statement</h5>
+</div>
+<hr />
+@if (@ViewBag.istrue)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.errorMessage
+    </div>
+}
+@if (Model == null)
+{
+    <form asp-action="MiniStatement" method="post">
+
+        <div class="form-group">
+            <label class="control-label">Account No</label>
+            <input class="form-control col-10" name="accountNo"  />
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="View" class="btn btn-secondary" />
+        </div>
+
+    </form>
+}
+
+@if (Model != null)
+
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr class="bg-secondary">
+                            <th scope="col">Transaction Id</th>
+                            <th scope="col">From Account No</th>
+                            <th scope="col">To Account No</th>
+                            <th scope="col">Transaction Date</th>
+                            <th scope="col">Transaction Amount</th>
+                            <th scope="col">Debit  </th>
+                            <th scope="col">Credit  </th>
+                            <th scope="col">Balance</th>
+                            <th scope="col">Description</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach (var item in Model)
+                            {
+
+                        <tr>
+                            <td>@item.TransactionId</td>
+                            <td>@item.FromAccountNo</td>
+                            <td>@item.ToAccountNo</td>
+                            <td>@item.TransactionDate</td>
+                            <td>@item.TransactionAmount</td>
+                            @if (item.TransactionType == "Debit")
+                            {
+                                <td>@item.TransactionType</td>
+                                <td>   </td>
+                                <td>@item.FromAccountBalance</td>
+
+                            }
+                           
+                            @if (item.TransactionType == "Credit")
+                            {
+                                <td> </td>
+                                <td>@item.TransactionType</td>
+                               
+                                <td>@item.ToAccountBalance</td>
+                            }
+                           
+                            <td>@item.Description</td>
+                        </tr>
+                        }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+

@@ -1,0 +1,69 @@
+﻿@model BankSystem.Models.TransactionViewModel
+
+@{
+    ViewData["Title"] = "FundTranfer";
+}
+@if (@ViewBag.istrue && ViewBag.pass == 1)
+{
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    @ViewBag.errorMessage
+</div>
+}
+else if (@ViewBag.istrue)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.errorMessage
+    </div>
+}
+
+<div class=" row ml-2">
+    <h5>Money Transfer</h5>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="FundTranfer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="form-group">
+                <label asp-for="FromAccountNo" class="control-label">Payers Account No</label>
+                <input asp-for="FromAccountNo" class="form-control" />
+                <span asp-validation-for="FromAccountNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToAccountNo" class="control-label">Payees Account No</label>
+                <input asp-for="ToAccountNo" class="form-control" />
+                <span asp-validation-for="ToAccountNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TransactionAmount" class="control-label">Amount</label>
+                <input asp-for="TransactionAmount" class="form-control" />
+                <span asp-validation-for="TransactionAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="TransactionType" class="control-label"></label>
+                    <select asp-for="TransactionType" class="form-control">
+                        <option value="">Transaction Type</option>
+                        <option value="">Deposit</option>
+                        <option value="">Credit</option>
+                    </select>
+                    <span asp-validation-for="TransactionType" class="text-danger"></span>
+                </div>*@
+        <div class="form-group">
+            <input type="submit" value="Transfer" class="btn btn-secondary" />
+            <input type="reset" value="Reset" class="btn btn-secondary" />
+        </div>
+
+        </form>
+    </div>
+</div>
+
+

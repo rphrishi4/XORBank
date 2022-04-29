@@ -1,0 +1,134 @@
+﻿@model IEnumerable<BankSystem.Models.TransactionViewModel>
+
+
+
+@{
+    ViewData["Title"] = "CustomizedStatement";
+}
+
+
+<div class=" row ml-2">
+    <h5>Bank Statement</h5>
+</div>
+<hr />
+@if (@ViewBag.istrue)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.errorMessage
+    </div>
+}
+<hr />
+@if (Model == null)
+{
+    
+    <form asp-action="CustomizedStatement"
+                       asp-controller="CustomerTransaction" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+
+            <div class="form-group">
+                <label class="control-label">Account No</label>
+                <input class="form-control" name="accountNo" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" >From Date</label>
+                <input class="form-control " type="datetime" name="fromDate" id="datetimepicker1"/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">To Date</label>
+                <input class="form-control" type="datetime" name="toDate" />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="View" class="btn btn-secondary" />
+            </div>
+            </div>
+    </form>
+
+}
+
+
+
+
+@if (Model != null)
+
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 cart_dt">
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr class="bg-secondary">
+                            <th scope="col">TransactionId</th>
+                            <th scope="col">From AccountNo</th>
+                            <th scope="col">To AccountNo</th>
+                            <th scope="col">Transaction Date</th>
+                            <th scope="col">Transaction Amount</th>
+                            <th scope="col">Debit</th>
+                            <th scope="col">Credit</th>
+                            <th scope="col">Balance</th>
+                            <th scope="col">Description</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach (var item in Model)
+                            {
+
+                        <tr>
+                            <td>@item.TransactionId</td>
+                            <td>@item.FromAccountNo</td>
+                            <td>@item.ToAccountNo</td>
+                            <td>@item.TransactionDate</td>
+                            <td>@item.TransactionAmount</td>
+                            @if (item.TransactionType == "Debit")
+                            {
+                                <td>@item.TransactionType</td>
+                                <td>   </td>
+                                <td>@item.FromAccountBalance</td>
+
+                            }
+
+                            @if (item.TransactionType == "Credit")
+                            {
+                                <td> </td>
+                                <td>@item.TransactionType</td>
+
+                                <td>@item.ToAccountBalance</td>
+                            }
+
+                            <td>@item.Description</td>
+                        </tr>
+                        }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+@section scripts
+{
+   <script>
+
+       $(document).ready(function () {
+           $('#datetimepicker1').datepicker({
+               format: "dd/mm/yyyy",
+               language: "es",
+               autoclose: true,
+               todayHighlight: true
+           };
+          
+       })
+       </script>
+
+}
+
+
+

@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankSyatemWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:BankSyatemWebApi.Controllers.AccountController.DeleteAccount(System.Int32)">
+            <summary>
+            Method to Delete Account
+            </summary>
+            <param name="accountId"></param>
+            <returns></returns>
+            <remark>
+            Delete Account
+            
+            
+            api/Account/DeleteAccount
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.AccountController.Get">
+            <summary>
+            Method to Get All account
+            </summary>
+            <returns></returns>
+            <remark>
+            Get All Account
+            
+            
+            api/Account/Get
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.AccountController.Get(System.Int32)">
+            <summary>
+            Method to Search Account
+            </summary>
+            <param name="accountNo"></param>
+            <returns></returns>
+            <remark>
+            Search Account
+            
+            
+            api/Account/Get/accountId=1
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.AccountController.CreateAccount(CommonLayer.Models.Account)">
+            <summary>
+            Method to Create Account for customer
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+             /// <remark>
+            Add Account
+            
+            
+            api/Account/CreateAccount
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.AccountController.UpdateAccount(CommonLayer.Models.Account)">
+            <summary>
+            Method to update Account for customer
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+             /// <remark>
+            Update Account
+            
+            
+             api/Account/UpdateAccount
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.AccountController.BalanceCheck(System.Int32)">
+            <summary>
+            Method to Check Account Balance
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <remark>
+             Update Account
+            
+            
+             api/Account/CreateAccount
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.CustomerController.RegisterCustomer(CommonLayer.Models.Customer)">
+            <summary>
+            Method to Register Customer
+            </summary>
+            <param name="customer"></param>
+            <returns>Newly Registered Customer</returns>
+             <remark>
+            +Register Customer
+            
+              +api/Customer/RegisterCustomer
+              </remark>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.CustomerController.DeleteCustomer(System.String)">
+            <summary>
+            Method to Delete Customer
+            </summary>
+            <param name="customerId"></param>
+            <returns></returns>
+            <remark>
+            Delete Customer
+            
+             api/Customer/DeleteCustomer
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.CustomerController.GetAllCustomers">
+            <summary>
+            Method to Get all Customer
+            </summary>
+            <param ></param>
+            <returns>List of Customer</returns>
+            <remark>
+            Get All Customer
+            
+             api/Customer/GetAllCustomers
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.CustomerController.GetCustomer(System.String)">
+            <summary>
+            Method to Serach Customer By UserId(Email)
+            </summary>
+            <param name="email"></param>
+            <returns> Customer</returns>
+            <remark>
+            Serach Customer
+            
+             api/Customer/GetCustomer
+            </remark>>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.CustomerController.UpdateCustomer(CommonLayer.Models.Customer)">
+            <summary>
+            Method to Update customer
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.TransactionControllerr.Deposit(CommonLayer.Models.Transaction)">
+            <summary>
+            Method to Deposit 
+            
+            </summary>
+            <param name="transaction"> 
+             <see> Required field = 
+              toAccountNo ,
+              transaction amount ,
+              transaction Type  ,
+              description
+              </see>
+            </param>
+            <remark>
+            </remark>
+            <returns></returns>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.TransactionControllerr.MiniStatement(System.Int32)">
+            <summary>
+            Method for MiniStatement
+            </summary>
+            <param name="accountId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.TransactionControllerr.CustomizedStatement(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Method to get CustomizedStatement
+            </summary>
+            <param name="accountId"></param>
+            <param name="fromDate"></param>
+            <param name="todate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankSyatemWebApi.Controllers.TransactionControllerr.Withdrawal(CommonLayer.Models.Transaction)">
+            <summary>
+            Method for Withdrawal
+            </summary>
+            <param name="transaction">
+             <see> Required field = 
+              fromAccountNo ,
+              transaction amount ,
+              transaction Type  ,
+              description
+              </see>
+              </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

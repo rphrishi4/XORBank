@@ -1,0 +1,42 @@
+﻿
+<div style="align-content:center"><h3>Welcome To MoneyBank</h3> </div>
+@*@{
+    ViewData["Title"] = "CustomerHomePage";
+}
+
+<div class="container align-content-center" >
+   
+
+    <table  class="table mt-sm-1" >
+        <tr>
+
+            <td><a asp-controller="Customer" asp-action="AddCustomer" type="button" class="btn btn-secondary">Customer Details</a></td>
+            <td><a asp-controller="CustomerBankAccount" asp-action="AccountDetails" type="button" class="btn btn-secondary">Account Details</a></td>
+            <td><a asp-controller="CustomerTransaction" asp-action="FundTranfer" type="button" class="btn btn-secondary">fund transfer</a></td>
+
+        </tr>
+
+        <tr>
+
+            <td>Fund Tranfer</td>
+            <td><a asp-controller="CustomerTransaction" asp-action="MiniStatement" type="button" class="btn btn-secondary">Account Mini Statement</a></td>
+            <td><a asp-controller="CustomerTransaction" asp-action="CustomizedStatement" type="button" class="btn btn-secondary">Account Customized Statement</a></td>
+            <td><a asp-controller="CustomerTransaction" asp-action="CustomizedStatement" type="button" class="btn btn-secondary">Account Customized Statement</a></td>
+
+            
+
+        </tr>
+        <tr>
+
+            <td></td>
+            <td><a asp-controller="Account" asp-action="PasswordChange" type="button" class="btn btn-secondary">Change Password</a></td>
+            <td></td>
+
+        </tr>
+
+
+    </table>
+        
+    </div>
+</div>*@
+

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "BalancCheck";
+}
+
+<div class=" row ml-2">
+    <h5>Balance Enquiry</h5>
+</div>
+<hr />
+
+
+    @if (@ViewBag.pass == 0)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.errorMessage
+        </div>
+    }
+        <form asp-action="BalancCheck" method="post">
+
+            <div class="form-group">
+                <label class="control-label">Account No</label>
+                <input class="form-control col-10" name="id" value="@ViewBag.No" />
+
+            </div>
+            @if (@ViewBag.pass == 1)
+            {
+                <div class="form-group">
+                    <label class="control-label">Balance</label>
+                    <input class="form-control col-10" value=" @ViewBag.balance" />
+                </div>
+            }
+
+            <div class="form-group">
+                <input type="submit" value="View" class="btn btn-secondary" />
+            </div>
+
+        </form>
+
+    

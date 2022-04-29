@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> signInManager;
+<div class="navbar-nav justifly-content-center  ">
+    @if (signInManager.IsSignedIn(User))
+    {
+
+
+        <div class="dropdown mt-2 ml-1">
+            <label class="dropdown-toggle" data-toggle="dropdown">
+                Account
+            </label>
+            <div class="dropdown-menu">
+                <a asp-controller="CustomerBankAccount" asp-action="AccountDetails" type="button" class="dropdown-item btn-outline-light but1 ">Account Details</a>
+                <a asp-controller="CustomerBankAccount" asp-action="BalancCheck" type="button" class="dropdown-item btn-outline-light but1">Balance Enquiry</a>
+
+                <a asp-controller="CustomerBankAccount" asp-action="CreateAccount" type="button" class="dropdown-item btn-outline-light but1">Add Account</a>
+
+
+            </div>
+        </div>
+
+
+
+        @*<form method="post" asp-action="Logout" asp-controller="Account">
+
+            </form>*@
+    }
+
+</div>
+

@@ -1,0 +1,44 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> signInManager;
+<div class="navbar-nav justifly-content-center mr-5 ">
+    @if (signInManager.IsSignedIn(User))
+    {
+
+
+        <div class="dropdown ">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle " style="m" data-toggle="dropdown">
+                @User.Identity.Name
+            </button>
+            <div class="dropdown-menu">
+                <form method="get" asp-action="AddCustomer" asp-controller="Customer">
+                    <button class="dropdown-item btn-outline-light but1 " style="outline-style:none">Profile</button>
+                </form>
+                <form method="get" asp-controller="Account" asp-action="PasswordChange">
+                    <button class="dropdown-item btn-outline-light but1" style="outline-style:none">Password Change</button>
+                </form>
+                <form method="post" asp-action="Logout" asp-controller="Account">
+                    <button class="dropdown-item btn-outline-light but1" style="outline-style:none">Logout</button>
+                </form>
+
+            </div>
+        </div>
+
+
+
+        @*<form method="post" asp-action="Logout" asp-controller="Account">
+
+            </form>*@
+    }
+    else
+    {
+
+        <a asp-action="Login" asp-controller="Account" class="btn btn-outline-dark">Login </a>
+        
+         <a asp-action="Register" asp-controller="Account" class="btn btn-outline-dark ml-1">Sign Up</a>
+        
+    }
+</div>

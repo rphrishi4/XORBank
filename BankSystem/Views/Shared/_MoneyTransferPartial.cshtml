@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> signInManager;
+<div class="navbar-nav justifly-content-center  ml-1">
+    @if (signInManager.IsSignedIn(User))
+    {
+
+
+        <a asp-controller="CustomerTransaction" asp-action="FundTranfer" type="button"  class="nav-link text-dark">Money transfer</a>
+
+
+        @*<form method="post" asp-action="Logout" asp-controller="Account">
+
+            </form>*@
+    }
+
+</div>

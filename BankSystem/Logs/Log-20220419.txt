@@ -1,0 +1,3 @@
+2022-04-19T16:17:49.5660233+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-04-19T16:17:49.6221785+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2022-04-19T16:17:49.6335740+05:30  [INF] Content root path: "C:\Users\rphri\OneDrive\Desktop\POC_BankSysytemApp_Hrishikesh\Layered\BankSystem\BankSystem" (b5d60022)

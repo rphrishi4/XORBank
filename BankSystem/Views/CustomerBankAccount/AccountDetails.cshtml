@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CommonLayer.Models.Account>
+
+@{
+    ViewData["Title"] = "AccountDetails";
+}
+
+
+<div class=" row ml-2">
+    <h5>Account Details</h5>
+</div>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-12 cart_dt">
+            <table class="table table-sm">
+                <thead>
+                    <tr class="bg-secondary">
+                        <th scope="col">Account Number</th>
+                        <th scope="col">Account Type</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Balance</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        @foreach (var item in Model)
+                        {
+
+                        <tr>
+                            <td>@item.AccountNo</td>
+                            <td>@item.AccountType</td>
+                            <td>@item.CreateDate</td>
+                            <td>@item.Balance</td>
+                        </tr>
+                    }
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
